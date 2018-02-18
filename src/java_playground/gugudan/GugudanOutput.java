@@ -1,4 +1,4 @@
-package gugudan;
+package java_playground.gugudan;
 
 import java.util.ArrayList;
 
