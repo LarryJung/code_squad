@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class GugudanInput {
 	
+	
 	private static Scanner scanner;
 
 	public static int[] input() {
