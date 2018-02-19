@@ -32,20 +32,22 @@ public class CalculatorMethod {
 
 	static int calculate(String symbol, int first, int second) {
 
-		int result = 0;
+		int result = first;
 
 		if (symbol.equals("+")) {
-			result = first + second;
-		} else if (symbol.equals("+")) {
-			result = first + second;
+			result = result + second;
 		} else if (symbol.equals("-")) {
-			result = first - second;
+			result = result - second;
 		} else if (symbol.equals("*")) {
-			result = first * second;
+			result = result * second;
 		} else if (symbol.equals("/")) {
-			result = first / second;
+			result = result / second;
 		}
 		return result;
+	}
+	
+	static void print(int result) {
+		System.out.println("result : " + result);
 	}
 
 	public static void main(String[] args) {
@@ -55,13 +57,14 @@ public class CalculatorMethod {
 		while (true) {
 			String symbol = getSymbol(sc);
 			if (symbol.equals("quit")) {
-				System.out.println("result : " + result);
+				print(result);
 				break;
 			} else {
 				int second = getSecondValue(sc);
 				result = calculate(symbol, result, second);
-				System.out.println("result : " + result);
+				print(result);
 			}
 		}
+		sc.close();
 	}
 }
