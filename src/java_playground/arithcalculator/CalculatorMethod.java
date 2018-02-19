@@ -4,18 +4,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculatorMethod {
-	static int getFirstValue(Scanner sc) {
-		System.out.println("fitst number : ");
-		int first = sc.nextInt();
-		return first;
+	
+	// get integer value
+	static int getValue(Scanner sc) {
+		int value = sc.nextInt();
+		return value;
 	}
-
-	static int getSecondValue(Scanner sc) {
-		System.out.println("second number : ");
-		int second = sc.nextInt();
-		return second;
-	}
-
+	
+	// get symbol
 	static String getSymbol(Scanner sc) {
 		String[] symbols = new String[] { "+", "-", "*", "/", "quit" };
 		while (true) {
@@ -29,7 +25,8 @@ public class CalculatorMethod {
 			}
 		}
 	}
-
+	
+	// calculate
 	static int calculate(String symbol, int first, int second) {
 
 		int result = first;
@@ -46,13 +43,17 @@ public class CalculatorMethod {
 		return result;
 	}
 	
+	// output print
 	static void print(int result) {
 		System.out.println("result : " + result);
 	}
 
+	// main method
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int result = getFirstValue(sc);
+		
+		System.out.println("first value : ");
+		int result = getValue(sc);
 
 		while (true) {
 			String symbol = getSymbol(sc);
@@ -60,7 +61,8 @@ public class CalculatorMethod {
 				print(result);
 				break;
 			} else {
-				int second = getSecondValue(sc);
+				System.out.println("first value : ");
+				int second = getValue(sc);
 				result = calculate(symbol, result, second);
 				print(result);
 			}
