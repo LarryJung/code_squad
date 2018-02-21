@@ -10,6 +10,9 @@ public class Prompt {
 			System.out.println("\n연도를 입력하세요.");
 			System.out.print("YEAR>>");
 			int year = sc.nextInt();
+			if (year == -1) {
+				break;
+			}
 			System.out.println("달을 입력하세요.");
 			System.out.print("MONTH>>");
 			int month = sc.nextInt();
@@ -23,9 +26,10 @@ public class Prompt {
 			System.out.println("첫번째 요일을 입력하세요. (SU, MO, WE, TH, FR, SA)");
 			System.out.print("WEEKDAY>>");
 			String weekday = sc.next();
-			
-
-			System.out.printf("%d년 %d월은 %d일까지 있습니다.\n", year, month, cal.getMaxDaysOfMonth(year, month));
+			if (weekday == "-1") {
+				break;
+			}
+//			System.out.printf("%d년 %d월은 %d일까지 있습니다.\n", year, month, cal.getMaxDaysOfMonth(year, month));
 			cal.printSampleCalender(year, month, weekday);
 		}
 		System.out.println("Bye~");
