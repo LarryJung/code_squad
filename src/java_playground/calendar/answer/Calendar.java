@@ -2,13 +2,10 @@ package java_playground.calendar.answer;
 
 import java.awt.List;
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class Calendar {
 
-	HashMap<String, List> map1 = new HashMap<String, List>();
-	List arraylist1 = new List();
-	
+
 	public int CountLeapYear(int year) {
 		int countleapyear = 0;
 		if (year >= 1582) {
@@ -177,7 +174,7 @@ public class Calendar {
 		}
 		System.out.println();
 	}
-	
+
 	public void printUI() {
 		System.out.println();
 		System.out.println("+--------------------+");
@@ -188,28 +185,28 @@ public class Calendar {
 		System.out.println("+--------------------+");
 		System.out.println("명령 (1, 2, 3, h, q)");
 	}
-	
-	public void calendarEnrollment(String wantedDay, String toDo) {
-		arraylist1.add(toDo);
-		map1.put(wantedDay, arraylist1);
+
+	public void calendarEnrollment(String wantedDay, String toDo, PlanItem user) {
+		user.arraylist1.add(toDo);
+		user.map1.put(wantedDay, user.arraylist1);
 	}
 
-	public void searchCalendar(String wantedDay) {
-		if (map1.containsKey(wantedDay)) {
-			List lists = (List)map1.get(wantedDay);
+	public void searchCalendar(String wantedDay, PlanItem user) {
+		if (user.map1.containsKey(wantedDay)) {
+			List lists = (List) user.map1.get(wantedDay);
 			System.out.println(Arrays.toString(lists.getItems()));
 		}
 	}
-	
+
 	public void viewCalendar(String wantedDay) {
 		String[] splitedValues = wantedDay.split("-");
 		int year = Integer.parseInt(splitedValues[0]);
 		int month = Integer.parseInt(splitedValues[1]);
-		printCalendar(year, month);		
+		printCalendar(year, month);
 	}
 
 	public void viewHelp() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
