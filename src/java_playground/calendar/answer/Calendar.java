@@ -8,7 +8,6 @@ import java.util.Arrays;
 
 public class Calendar {
 
-
 	public int CountLeapYear(int year) {
 		int countleapyear = 0;
 		if (year >= 1582) {
@@ -192,23 +191,21 @@ public class Calendar {
 	public void calendarEnrollment(String wantedDay, String toDo, PlanItem user, FileWriter fw) throws IOException {
 		user.arraylist1.add(toDo);
 		user.map1.put(wantedDay, user.arraylist1);
-		fw.write(wantedDay+","+toDo);
+		fw.write(wantedDay + "," + toDo + "\n");
 	}
 
 	public void searchCalendar(String wantedDay, PlanItem user, BufferedReader br) throws IOException {
-//		if (user.map1.containsKey(wantedDay)) {
-//			List lists = (List) user.map1.get(wantedDay);
-//			System.out.println(Arrays.toString(lists.getItems()));
-//		}
+		// if (user.map1.containsKey(wantedDay)) {
+		// List lists = (List) user.map1.get(wantedDay);
+		// System.out.println(Arrays.toString(lists.getItems()));
+		// }
 		String line = null;
-		while ((line = br.readLine()) != null) {
-
-            if (line.startsWith(wantedDay)) {
-                System.out.println(line);
-                break;
-            }
-        }
 		
+		while ((line = br.readLine()) != null) {
+			if (line.startsWith(wantedDay)) {
+				System.out.println(line);
+			}
+		}
 	}
 
 	public void viewCalendar(String wantedDay) {

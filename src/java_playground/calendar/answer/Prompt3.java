@@ -27,7 +27,7 @@ public class Prompt3 {
 
 			switch (input) {
 			case "1":
-		        FileWriter fw = new FileWriter("./src/java_playground/calendar/answer/"+username+".txt");
+		        FileWriter fw = new FileWriter("./src/java_playground/calendar/answer/"+username+".txt", true);
 				System.out.println("[일정 등록] 날짜를 입력하세요.\n>>");
 				wantedDay = sc.nextLine();
 				System.out.println("일정을 입력하세요.\n>>");
