@@ -1,6 +1,9 @@
 package java_playground.calendar.answer;
 
 import java.awt.List;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Calendar {
@@ -186,16 +189,26 @@ public class Calendar {
 		System.out.println("명령 (1, 2, 3, h, q)");
 	}
 
-	public void calendarEnrollment(String wantedDay, String toDo, PlanItem user) {
+	public void calendarEnrollment(String wantedDay, String toDo, PlanItem user, FileWriter fw) throws IOException {
 		user.arraylist1.add(toDo);
 		user.map1.put(wantedDay, user.arraylist1);
+		fw.write(wantedDay+","+toDo);
 	}
 
-	public void searchCalendar(String wantedDay, PlanItem user) {
-		if (user.map1.containsKey(wantedDay)) {
-			List lists = (List) user.map1.get(wantedDay);
-			System.out.println(Arrays.toString(lists.getItems()));
-		}
+	public void searchCalendar(String wantedDay, PlanItem user, BufferedReader br) throws IOException {
+//		if (user.map1.containsKey(wantedDay)) {
+//			List lists = (List) user.map1.get(wantedDay);
+//			System.out.println(Arrays.toString(lists.getItems()));
+//		}
+		String line = null;
+		while ((line = br.readLine()) != null) {
+
+            if (line.startsWith(wantedDay)) {
+                System.out.println(line);
+                break;
+            }
+        }
+		
 	}
 
 	public void viewCalendar(String wantedDay) {
