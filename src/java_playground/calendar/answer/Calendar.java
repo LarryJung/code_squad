@@ -1,10 +1,8 @@
 package java_playground.calendar.answer;
 
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Calendar {
 
